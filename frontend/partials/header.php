@@ -3,26 +3,41 @@ include '../config/connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<title>Milea Home Interior</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Clinic Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
 
-	<link rel="icon" type="image/png" href="cozastore-master/images/icons/favicon.png"/>
+  <!-- Favicons -->
+  <link href="Clinic-1.0.0/assets/img/favicon.png" rel="icon">
+  <link href="Clinic-1.0.0/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-	<link rel="stylesheet" type="text/css" href="cozastore-master/vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="cozastore-master/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="cozastore-master/fonts/iconic/css/material-design-iconic-font.min.css">
-	<link rel="stylesheet" type="text/css" href="cozastore-master/fonts/linearicons-v1.0.0/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="cozastore-master/vendor/animate/animate.css">
-	<link rel="stylesheet" type="text/css" href="cozastore-master/vendor/css-hamburgers/hamburgers.min.css">
-	<link rel="stylesheet" type="text/css" href="cozastore-master/vendor/animsition/css/animsition.min.css">
-	<link rel="stylesheet" type="text/css" href="cozastore-master/vendor/select2/select2.min.css">
-	<link rel="stylesheet" type="text/css" href="cozastore-master/vendor/daterangepicker/daterangepicker.css">
-	<link rel="stylesheet" type="text/css" href="cozastore-master/vendor/slick/slick.css">
-	<link rel="stylesheet" type="text/css" href="cozastore-master/vendor/MagnificPopup/magnific-popup.css">
-	<link rel="stylesheet" type="text/css" href="cozastore-master/vendor/perfect-scrollbar/perfect-scrollbar.css">
-	<link rel="stylesheet" type="text/css" href="cozastore-master/css/util.css">
-	<link rel="stylesheet" type="text/css" href="cozastore-master/css/main.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="Clinic-1.0.0/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="Clinic-1.0.0/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="Clinic-1.0.0/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="Clinic-1.0.0/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="Clinic-1.0.0/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="Clinic-1.0.0/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="Clinic-1.0.0/assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Clinic
+  * Template URL: https://bootstrapmade.com/clinic-bootstrap-template/
+  * Updated: Jul 23 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
-<body class="animsition">

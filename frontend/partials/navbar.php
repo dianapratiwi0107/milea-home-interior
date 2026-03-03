@@ -1,46 +1,67 @@
-<header class="header-v2">
+<style>
+/* Navbar tetap */
+#header {
+    background-color: #ffffff !important;
+    transition: none !important;
+}
 
-	<!-- Header desktop -->
-	<div class="container-menu-desktop">
-		
-		<div class="wrap-menu-desktop">
-			<nav class="limiter-menu-desktop container">
-				
-				<!-- Logo desktop -->
-				<a href="index.php" class="logo">
-					<img src="cozastore-master/images/icons/logo-01.png" alt="IMG-LOGO">
-				</a>
+#header.scrolled {
+    background-color: #f1f1f1 !important;
+    box-shadow: none !important;
+}
 
-				<!-- Menu desktop -->
-				<div class="menu-desktop">
-					<ul class="main-menu">
-						<li class="active-menu">
-							<a href="index.php">Beranda</a>
-						</li>
+/* Warna teks */
+#header .sitename,
+#header .navmenu a {
+    color: #000000 !important;
+}
 
-						<li>
-							<a href="#">Produk</a>
-						</li>
+/* HAPUS border-bottom kalau ada */
+#header .navmenu a.active {
+    border-bottom: none !important;
+}
 
-						<li>
-							<a href="#">About us</a>
-						</li>
+/* Pakai garis bawah dari ::after saja */
+#header .navmenu a::after {
+    background-color: #000000 !important;
+}
+</style>
 
-						<li>
-							<a href="#">Contact</a>
-						</li>
-					</ul>
-				</div>	
+/* Hover tetap elegan */
+#header .navmenu a:hover {
+    color: #ffffff !important;
+}
+</style>
+<?php
+$qabout_us = "SELECT * FROM about_us LIMIT 1";
+$resultabout_us = mysqli_query($connect, $qabout_us);
 
-				<!-- Icon header -->
-				<div class="wrap-icon-header flex-w flex-r-m">
-					<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
-						<i class="zmdi zmdi-search"></i>
-					</div>
-				</div>
+if (!$resultabout_us) {
+    die("Query error: " . mysqli_error($connect));
+}
 
-			</nav>
-		</div>	
-	</div>
+$item = mysqli_fetch_object($resultabout_us);
+?>
+<header id="header" class="header fixed-top">
+  <div class="branding d-flex align-items-center">
+	<?php if ($item): ?>
 
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+     <a href="" class="logo d-flex align-items-center">
+    <img src="../storages/about_us/<?= htmlspecialchars($item->logo); ?>"
+         style="height: 300px; width: auto;">
+   </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#section-banner" class="active">Beranda</a></li>
+          <li><a href="pages/detail/about.php">About us</a></li>
+          <li><a href="pages/detail/produk.php">Produk</a></li>
+          <li><a href="services.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+ <?php endif; ?>
+  </div>
 </header>

@@ -5,144 +5,168 @@ $resultproduk = mysqli_query($connect, $qproduk);
 if (!$resultproduk) {
     die("Query error: " . mysqli_error($connect));
 }
+
+$qcontact = "SELECT * FROM contact LIMIT 1";
+$resultcontact = mysqli_query($connect, $qcontact);
+
+if (!$resultcontact) {
+    die("Query error: " . mysqli_error($connect));
+}
+
+$contact = mysqli_fetch_object($resultcontact);
 ?>
 
 <style>
 /* =========================
-   DOUBLE LAYER CARD SOFT
+   LUXURY EDITORIAL PRODUCT
 ========================= */
 
+.product-section {
+    padding: 110px 0;
+    background: #f8f7f4;
+}
+
+.product-title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.product-title h3 {
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #1e1e1e;
+}
+
 .product-grid {
-    padding: 60px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
 }
 
-/* CARD */
-.double-card {
-    position: relative;
-    border-radius: 22px; /* MELENGKUNG */
-    overflow: hidden;
+.product-card {
     background: #fff;
-    box-shadow: 0 14px 45px rgba(0,0,0,.12);
-    transition: .4s ease;
+    border-radius: 28px;
+    overflow: hidden;
+    transition: all .4s ease;
+    border: 1px solid transparent;
 }
 
-.double-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 30px 70px rgba(0,0,0,.18);
+.product-card:hover {
+    transform: translateY(-8px);
+    border: 1px solid #e4dfd7;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.08);
 }
 
-/* LAYER 1 - IMAGE */
-.double-img {
-    position: relative;
-    height: 270px;
+.product-img {
+    height: 300px;
     overflow: hidden;
 }
 
-.double-img img {
+.product-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: .6s ease;
+    transition: .8s ease;
 }
 
-.double-card:hover img {
-    transform: scale(1.07);
+.product-card:hover img {
+    transform: scale(1.06);
 }
 
-/* OVERLAY GELAP */
-.double-img::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,.55), transparent);
+.product-content {
+    padding: 28px;
 }
 
-/* LAYER 2 - INFO */
-.double-info {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 16px;
-    background: #fff;
-    border-radius: 18px; /* MELENGKUNG */
-    padding: 16px 18px;
-    transition: .4s ease;
-}
-
-.double-card:hover .double-info {
-    bottom: 8px;
-}
-
-/* TEXT */
-.double-date {
+.product-date {
     font-size: 12px;
-    color: #888;
+    color: #999;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
-.double-title {
-    font-size: 16px;
+.product-name {
+    font-size: 20px;
     font-weight: 600;
     color: #222;
-    margin: 6px 0;
+    margin-bottom: 18px;
     line-height: 1.4;
 }
 
-/* BUTTON */
-.double-btn {
+.product-link {
     display: inline-block;
-    margin-top: 6px;
-    font-size: 13px;
-    font-weight: 500;
-    color: #000;
+    padding: 10px 22px;
+    border-radius: 50px;
+    border: 1px solid #222;
     text-decoration: none;
-    transition: .3s;
+    font-size: 14px;
+    color: #222;
+    transition: all .3s ease;
 }
 
-.double-btn:hover {
-    letter-spacing: .5px;
+.product-link:hover {
+    background: #222;
+    color: #fff;
+}
+
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-title h3 {
+        font-size: 28px;
+    }
+
+    .product-img {
+        height: 240px;
+    }
 }
 </style>
 
-<section class="product-grid">
+<section class="product-section">
     <div class="container">
 
-        <div class="text-center p-b-40">
-            <h3 class="ltext-103 cl5">
-                Product Overview
-            </h3>
+        <div class="product-title">
+            <h3>PRODUCT</h3>
         </div>
 
-        <div class="row">
+        <div class="product-grid">
 
-            <?php 
-            mysqli_data_seek($resultproduk, 0);
-            while ($item = mysqli_fetch_object($resultproduk)): 
-            ?>
+            <?php while ($produk = mysqli_fetch_object($resultproduk)): ?>
 
-            <!-- 2 COLUMN -->
-            <div class="col-12 col-md-6 p-b-30">
-                <div class="double-card">
+            <div class="product-card">
 
-                    <!-- LAYER 1 -->
-                    <div class="double-img">
-                        <img src="../storages/produk/<?= htmlspecialchars($item->image) ?>" alt="produk">
+                <div class="product-img">
+                    <img src="../storages/produk/<?= htmlspecialchars($produk->image) ?>" alt="produk">
+                </div>
+
+                <div class="product-content">
+
+                    <div class="product-name">
+                        <?= htmlspecialchars($produk->nama) ?>
                     </div>
 
-                    <!-- LAYER 2 -->
-                    <div class="double-info">
-                        <div class="double-date">
-                            <?= htmlspecialchars($item->tanggal) ?>
-                        </div>
-                        <div class="double-title">
-                            <?= htmlspecialchars($item->nama) ?>
-                        </div>
-                        <a href="#" class="double-btn">
-                            Lihat Detail →
+                    <div class="product-date">
+                        <?= htmlspecialchars($produk->tanggal) ?>
+                    </div>
+
+                    <?php if ($contact): ?>
+                        <a href="<?= htmlspecialchars($contact->link) ?>" 
+                           class="product-link" 
+                           target="_blank">
+                           WhatsAPP
                         </a>
-                    </div>
+                    <?php endif; ?>
 
                 </div>
+
             </div>
 
             <?php endwhile; ?>

@@ -6,10 +6,12 @@ if (isset($_POST['tombol'])) {
     $imageOld = $_FILES['image']['tmp_name'];
     $imageNew = time() . ".png";
     $link = escapeString($_POST['link']);
+    $text = escapeString($_POST['text']);
+
 
     $storages = "../../../storages/contact/";
     if (move_uploaded_file($imageOld, $storages . $imageNew)) {
-        $qInsert = "INSERT INTO contact(image, link) VALUES('$imageNew', '$link')";
+        $qInsert = "INSERT INTO contact(image, link, text) VALUES('$imageNew', '$link', '$text')";
 
         mysqli_query($connect, $qInsert) or die(mysqli_error($connect));
         echo " 

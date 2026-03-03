@@ -1,31 +1,21 @@
-	<!-- JS -->
+<!-- Scroll Top -->
+  <a href="#!" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
-	<script src="cozastore-master/vendor/jquery/jquery-3.2.1.min.js"></script>
+  <!-- Preloader -->
+  <div id="preloader"></div>
 
-	<script src="cozastore-master/vendor/animsition/js/animsition.min.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="Clinic-1.0.0/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="Clinic-1.0.0/assets/vendor/php-email-form/validate.js"></script>
+  <script src="Clinic-1.0.0/assets/vendor/aos/aos.js"></script>
+  <script src="Clinic-1.0.0/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="Clinic-1.0.0/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="Clinic-1.0.0/assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-	<script src="cozastore-master/vendor/bootstrap/js/popper.js"></script>
-	<script src="cozastore-master/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-	<script src="cozastore-master/vendor/select2/select2.min.js"></script>
-
-	<script src="cozastore-master/vendor/daterangepicker/moment.min.js"></script>
-	<script src="cozastore-master/vendor/daterangepicker/daterangepicker.js"></script>
-
-	<script src="cozastore-master/vendor/slick/slick.min.js"></script>
-	<script src="cozastore-master/js/slick-custom.js"></script>
-
-	<script src="cozastore-master/vendor/parallax100/parallax100.js"></script>
-
-	<script src="cozastore-master/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
-
-	<script src="cozastore-master/vendor/isotope/isotope.pkgd.min.js"></script>
-
-	<script src="cozastore-master/vendor/sweetalert/sweetalert.min.js"></script>
-
-	<script src="cozastore-master/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-
-	<script src="cozastore-master/js/main.js"></script>
+  <!-- Main JS File -->
+  <script src="Clinic-1.0.0/assets/js/main.js"></script>
 
 </body>
+
 </html>
